@@ -4,8 +4,11 @@ rover_width=100;
 rover_height=90;
 rover_x=10;
 rover_y=10;
-background_image = "mars.jpg";
+nasa_images=["nasa1.jpg","nasa2.jpg","nasa3.jpg"];
+random_no=Math.floor(Math.random()*3);
+background_image = nasa_images[random_no];
  rover_image = "rover.png";
+
 
  function add(){
     background_imgTag = new Image();
@@ -45,5 +48,48 @@ background_image = "mars.jpg";
               }
               if(keyPressed == '39') {
                 right();
+              }
+            }
+            function up()
+            {
+              if(rover_y>=0)
+              {
+                rover_y=rover_y-10;
+                uploadBackground();
+                uploadrover();
+
+              }
+            }
+
+            function down()
+            {
+              if(rover_y<=500)
+              {
+                rover_y=rover_y+10;
+                uploadBackground();
+                uploadrover();
+                
+              }
+            }
+
+            function left()
+            {
+              if(rover_x>=0)
+              {
+                rover_x=rover_x-10;
+                uploadBackground();
+                uploadrover();
+                
+              }
+            }
+
+            function right()
+            {
+              if(rover_x<=800)
+              {
+                rover_x=rover_x+10;
+                uploadBackground();
+                uploadrover();
+                
               }
             }
